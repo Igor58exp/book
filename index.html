@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html ng-app="geoApp">
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.25.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://code.angularjs.org/1.4.7/angular.js'></script>
+    <script src='https://code.angularjs.org/1.4.7/angular-route.js'></script>
+    <script src='https://code.angularjs.org/1.4.7/angular-animate.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/aileron" type="text/css"/>
+
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script src="app.js"></script>
+
+
+</head>
+    <body ng-controller="mainController">
+        <header ng-controller="headerController" >
+
+            <div class="mobile-menu-button" ng-init="toogle = ''" ng-click="toggle = 'toggle-show'" ></div>
+
+            <nav class="{{activeMainMenuButton}}" ng-class="toggle" ng-click="toggle='toggle-hide'">
+                <a href="#/home"             id="hLink"  >home</a>
+                <a href="#/map"              id="mLink"  >live demo</a>
+                <a href="#/services"         id="sLink"  >services</a>
+                <div class="" id="closeBtn" ng-click="toggle = 'toggle-hide'" ></div>
+            </nav>
+        </header>
+    <div ng-view class="view" autoscroll="true">
+    </div>
+
+    </body>
+</html>
